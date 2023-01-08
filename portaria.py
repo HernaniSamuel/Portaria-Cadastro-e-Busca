@@ -152,7 +152,6 @@ def cadastro():
         label = ctk.CTkLabel(master=frame, text="Cadastrado!")
         label.pack(pady=12, padx=10)
         frame.update()
-        del label
 
     button = ctk.CTkButton(master=frame, text="Cadastrar", command=cadastrar)
     button.pack(pady=12, padx=10)
