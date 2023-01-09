@@ -91,7 +91,7 @@ def busca():
     label = ctk.CTkLabel(master=frame, text="Busca", font=('Roboto', 30))
     label.pack(pady=12, padx=10)
 
-    placa = ctk.CTkEntry(master=frame, placeholder_text="Placa de saída")
+    placa = ctk.CTkEntry(master=frame, placeholder_text="Placa (sem espaço)")
     placa.pack(pady=12, padx=10)
     saida = ctk.CTkEntry(master=frame, placeholder_text="Saída")
     saida.pack(pady=12, padx=10)
