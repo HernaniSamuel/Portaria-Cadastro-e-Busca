@@ -2,8 +2,8 @@ import customtkinter as ctk
 import pandas as pd
 from datetime import date
 
-ctk.set_appearance_mode('dark', )
-ctk.set_default_color_theme('dark-blue')
+ctk.set_appearance_mode('light', )
+ctk.set_default_color_theme('green')
 
 root = ctk.CTk()
 root.geometry("500x450")
@@ -15,6 +15,7 @@ def salvar(df):
     except:
         root = ctk.CTkToplevel()
         root.geometry("800x250")
+        root.title('Falha de salvamento')
 
         frame = ctk.CTkFrame(master=root)
         frame.pack(pady=20, padx=60, fill="both", expand=True)
@@ -44,15 +45,19 @@ def resgatar():
 
 
 def formatar(placa):
-    traco = 0
-    for i in range(0, len(placa)):
-        if placa[i] == '-':
-            traco = 1
-    if traco == 0:
-        texto = f'{placa[0]}{placa[1]}{placa[2]}-{placa[3]}{placa[4]}{placa[5]}{placa[6]}'
-    else:
-        texto = f'{placa[0]}{placa[1]}{placa[2]}{placa[3]}{placa[4]}{placa[5]}{placa[6]}{placa[7]}'
-    return texto.upper()
+    try:
+        traco = 0
+        for i in range(0, len(placa)):
+            if placa[i] == '-':
+                traco = 1
+        if traco == 0:
+            texto = f'{placa[0]}{placa[1]}{placa[2]}-{placa[3]}{placa[4]}{placa[5]}{placa[6]}'
+        else:
+            texto = f'{placa[0]}{placa[1]}{placa[2]}{placa[3]}{placa[4]}{placa[5]}{placa[6]}{placa[7]}'
+        return texto.upper()
+    except:
+        texto = placa
+        return texto.upper()
 
 
 def menu():
@@ -126,7 +131,7 @@ def cadastro():
     identidade = ctk.CTkEntry(master=frame, placeholder_text="Identidade")
     identidade.pack(pady=12, padx=10)
 
-    placa = ctk.CTkEntry(master=frame, placeholder_text="Placa")
+    placa = ctk.CTkEntry(master=frame, placeholder_text="Placa (sem espaço)")
     placa.pack(pady=12, padx=10)
 
     motivo_destino = ctk.CTkEntry(master=frame, placeholder_text="Motivo/Destino")
