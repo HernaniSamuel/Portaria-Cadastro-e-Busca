@@ -12,9 +12,6 @@
   <li>Interface gráfica para interação do usuário.</li>
 </ul>
 
-<h2>Como Instalar e Executar</h2>
-<p>Para executar o script, é necessário instalar as dependências listadas em <code>requirements.txt</code>. Após a instalação, execute <code>portaria.py</code> para iniciar o programa.</p>
-
   <h2>Dependências</h2>
   <p>As principais dependências incluem:</p>
   <ul>
